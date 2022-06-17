@@ -1,0 +1,91 @@
+@import "media";
+@import "colors";
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  @include desktop {
+    padding: 1rem 2rem;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  &-logo {
+    height: auto;
+    max-width: 145px;
+  }
+
+  &-hamburger {
+    display: block;
+    cursor: pointer;
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &-links-container {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    left: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+
+    @include desktop {
+      display: flex;
+      position: unset;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      background-color: transparent;
+    }
+
+    & ul {
+      list-style: none;
+      text-align: center;
+      li a {
+        text-decoration: none;
+        text-transform: capitalize;
+        display: block;
+        color: black;
+        margin-bottom: 1.3rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        @include desktop {
+          margin-bottom: 0;
+          font-size: 1rem;
+        }
+      }
+      @include desktop {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+  }
+  &-links-container.active {
+    display: flex;
+  }
+
+  & button {
+    display: none;
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background-color: $Bright-Red;
+    border-radius: 50px;
+    border: transparent;
+    padding: 0.8rem 2rem;
+    @include desktop {
+      display: block;
+    }
+  }
+}
